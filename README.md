@@ -7,4 +7,4 @@ pegapirata é um aplicativo para a população douradense informar e saber locai
 @NycolasSF
 @Monteccino
 @PTommaselli
-@Julianelira
+@JulianeLira
