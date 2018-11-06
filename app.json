@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "pega_pirata",
+    "name": "pegapirata",
     "description": "This project is really great.",
-    "slug": "pega_pirata",
+    "slug": "pegapirata",
     "privacy": "public",
     "sdkVersion": "30.0.0",
     "platforms": ["ios", "android"],
