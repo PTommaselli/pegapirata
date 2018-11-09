@@ -1,32 +1,46 @@
-import React, { Component } from 'react';
-import { Text, View ,StyleSheet} from 'react-native';
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+import { createStackNavigator } from 'react-navigation';
 
-import MapView from 'react-native-maps';
+//
+import IndexPageClass from './src/pages/IndexPage';
+// import InfoOcorrenciaPageClass from './src/pages/InfoOcorrenciaPage';
+// import LoginPageClass from './src/pages/LoginPage';
 
-export default class App extends Component {
+const RootStack = createStackNavigator({
+  IndexPage: {
+    screen: IndexPageClass
+  },
+
+//   CadastroOcorrenciaPageClass:{
+//       screen: CadastroOcorrenciaPage
+//   },
+
+//   InfoOcorrenciaPageClass:{
+//       screen: InfoOcorrenciaPage
+//   },
+
+//   LoginPageClass:{
+//     screen: LoginPage
+//   },
+
+
+},{
+    navigationOptions: {
+      title: "PegaPirata",
+      headerTintColor: "white",
+      headerStyle:{
+        backgroundColor: "#3498db"
+      },
+      headerTitleStyle:{
+        color: "white",
+        fontSize: 25,
+      }
+    }
+  });
+
+export default class App extends React.Component {
   render() {
-    return (
-        <MapView
-            region={{
-              latitude: 37.78825,
-              longitude: -122.4324,
-              latitudeDelta: 0.0922,
-              longitudeDelta: 0.0421,        
-            }}
-            style={styles.mapView}
-          />
-    );
+    return <RootStack />;
   }
 }
-
-const styles = StyleSheet.create({
-  mapView: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    bottom: 0,
-    top: 0,
-    justifyContent: 'center',
-    alignItems: 'center'
-  }
-});
