@@ -6,22 +6,24 @@ import { createStackNavigator } from 'react-navigation';
 import IndexPageClass from './src/pages/IndexPage';
 // import InfoOcorrenciaPageClass from './src/pages/InfoOcorrenciaPage';
 // import LoginPageClass from './src/pages/LoginPage';
+import CadastroOcorrenciaPageClass from './src/pages/CadastroOcorrenciaPage';
 
 const RootStack = createStackNavigator({
+
   IndexPage: {
     screen: IndexPageClass
   },
 
-//   CadastroOcorrenciaPageClass:{
-//       screen: CadastroOcorrenciaPage
-//   },
+  CadastroOcorrenciaPageClass: {
+      screen: CadastroOcorrenciaPageClass
+  },
 
 //   InfoOcorrenciaPageClass:{
-//       screen: InfoOcorrenciaPage
+//       screen: InfoOcorrenciaPageClass
 //   },
 
 //   LoginPageClass:{
-//     screen: LoginPage
+//     screen: LoginPageClass
 //   },
 
 
