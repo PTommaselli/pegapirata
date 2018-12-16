@@ -69,15 +69,17 @@ export default class IndexPageClass extends React.Component {
               showsPointsOfInterest={ false }
               showBuildings={ false }
           >
-          { this.state.places.map(place => {
+          { this.state.places.map(place => (
             <MapView.Marker
               key={place.id}
+              title={place.title}
+              description={place.description}
               coordinate={{
                 latitude: place.latitude,
                 longitude: place.longitude
               }}
             />
-          })}
+          ))}
 
 
           </MapView>

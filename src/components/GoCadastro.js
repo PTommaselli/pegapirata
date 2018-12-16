@@ -8,7 +8,7 @@ class GoCadastroButton extends React.Component{
 
   render(){
     return (
-      <Button title="Ocorrencia" onPress={() => this.props.navigation.navigate('CadastroOcorrenciaPageClass')}/>
+      <Button title="Nova Ocorrencia" onPress={() => this.props.navigation.navigate('CadastroOcorrenciaPageClass')}/>
     )
   }
 };

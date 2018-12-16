@@ -2,9 +2,8 @@ import React from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 
-//
+
 import IndexPageClass from './src/pages/IndexPage';
-import InfoOcorrenciaPageClass from './src/pages/InfoOcorrenciaPage';
 // import LoginPageClass from './src/pages/LoginPage';
 import CadastroOcorrenciaPageClass from './src/pages/CadastroOcorrenciaPage';
 
@@ -16,10 +15,6 @@ const RootStack = createStackNavigator({
 
   CadastroOcorrenciaPageClass: {
       screen: CadastroOcorrenciaPageClass
-  },
-
-  InfoOcorrenciaPageClass:{
-      screen: InfoOcorrenciaPageClass
   },
 
   // LoginPageClass:{
