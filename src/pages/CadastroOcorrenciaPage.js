@@ -1,10 +1,33 @@
 import React from 'react';
 import { Text, View ,StyleSheet, TextInput, TouchableOpacity} from 'react-native';
+import MapView from 'react-native-maps';
 
 import Form from '../components/Form';
 import Picker from '../components/Picker';
 
 export default class CadastroOcorrenciaPageClass extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      region: {
+        latitude: null,
+        longitude: null,
+        latitudeDelta: 0.0922,
+        longitudeDelta: 0.0421,
+      }
+    }
+  }
+
+  _onPress(){
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const lat = position.coords.latitude;
+        const log = position.coords.longitude;
+      }
+    )
+
+  }
+
   render() {
     return (
 
@@ -14,15 +37,6 @@ export default class CadastroOcorrenciaPageClass extends React.Component {
 
         <Text style={styles.title}>Denúncia</Text>
 
-        <Form >
-
-            <TextInput
-                style={styles.textoLoc}
-                placeholder= "Localização"
-                borderBottomWidth={0}
-            />
-
-        </Form>
 
         <Picker />
 
@@ -35,18 +49,12 @@ export default class CadastroOcorrenciaPageClass extends React.Component {
             />
 
         </Form>
-            <TextInput
-                style={styles.textoDescOcorrencia}
-                placeholder= "Descrição da Ocorrência"
-                multiline={true}
-                borderBottomWidth={0}
-            />
         <Form>
 
         </Form>
         <View style={styles.areaBtn}>
           <TouchableOpacity style={styles.btnFinalizar}
-          onPressButton={ () => this.props.navigation.navigate('IndexPage') } >
+          onPressButton={ this._onPress  } >
             <Text style={styles.textBtnFinalizar}>Finalizar</Text>
           </TouchableOpacity>
         </View>
