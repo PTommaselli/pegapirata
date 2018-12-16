@@ -3,10 +3,6 @@ import { View, Text, StyleSheet, Button } from 'react-native';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 950657e57607d23ae52919526e3180029e8725a1
 import IndexPageClass from './src/pages/IndexPage';
 // import LoginPageClass from './src/pages/LoginPage';
 import CadastroOcorrenciaPageClass from './src/pages/CadastroOcorrenciaPage';
