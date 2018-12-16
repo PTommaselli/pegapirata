@@ -1,10 +1,13 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { createStackNavigator } from 'react-navigation';
+import { View, Text, StyleSheet, Button } from 'react-native';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 950657e57607d23ae52919526e3180029e8725a1
 import IndexPageClass from './src/pages/IndexPage';
-// import InfoOcorrenciaPageClass from './src/pages/InfoOcorrenciaPage';
 // import LoginPageClass from './src/pages/LoginPage';
 import CadastroOcorrenciaPageClass from './src/pages/CadastroOcorrenciaPage';
 
@@ -18,13 +21,9 @@ const RootStack = createStackNavigator({
       screen: CadastroOcorrenciaPageClass
   },
 
-//   InfoOcorrenciaPageClass:{
-//       screen: InfoOcorrenciaPageClass
-//   },
-
-//   LoginPageClass:{
-//     screen: LoginPageClass
-//   },
+  // LoginPageClass:{
+  //   screen: LoginPageClass
+  // },
 
 
 },{

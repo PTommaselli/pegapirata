@@ -25,7 +25,7 @@ export default class PrimaryLoginPage extends React.Component {
                     value: 'Assedio',
                 },
                 {
-                    label: 'Assedio',
+                    label: 'Tiroteio',
                     value: 'Assedio',
                 }
             ],
