@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
 
-//
+
 import IndexPageClass from './src/pages/IndexPage';
 // import InfoOcorrenciaPageClass from './src/pages/InfoOcorrenciaPage';
 // import LoginPageClass from './src/pages/LoginPage';

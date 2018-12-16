@@ -12,10 +12,10 @@ export default class IndexPageClass extends React.Component {
       //   <View>
           <MapView
               region={{
-                latitude: 37.78825,
-                longitude: -122.4324,
-                latitudeDelta: 0.0922,
-                longitudeDelta: 0.0421,
+                latitude: -22.21664883,
+                longitude: -54.81285095,
+                // latitudeDelta: 0.0922,
+                // longitudeDelta: 0.0421,
               }}
               style={styles.mapView}
             />
