@@ -1,10 +1,34 @@
-module.exports.getRegistros = function(app, req, res){
+module.exports.inUsuario = function(app, req, res){
   let connection = app.serv_config.conexao_banco();
   let pesquisa = new app.app.model.consutasSQL(connection);
 
-  pesquisa.cadastroUsuario(nome, email, img, function (error, getRegistros) {
-    res.send(getRegistros);
+  let dados = req.body;
+
+  pesquisa.inUsuario(dados, function (error, userCadastrado) {
+    if (error) {
+      res.send("ERRO AO CADASTRAR")
+    }
+    res.send("CADASTRO REALIZADO COM SUCESSO");
   });
+}
+module.exports.inRegistro = function(app, req, res){
+  let connection = app.serv_config.conexao_banco();
+  let pesquisa = new app.app.model.consutasSQL(connection);
+
+  let dados = req.body;
+
+  console.log(dados);
+
+  if (dados) {
+    pesquisa.inRegistro(dados, function (error, registroCadastrado) {
+      if (error) {
+        res.send("ERRO AO CADASTRAR")
+      }
+      res.send("CADASTRO REALIZADO COM SUCESSO");
+    });
+  }else{
+    res.send('SEM DADOS')
+  }
 }
 /*  https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 var url = 'https://example.com/profile';

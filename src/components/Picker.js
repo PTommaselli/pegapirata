@@ -10,6 +10,7 @@ export default class PrimaryLoginPage extends React.Component {
         this.inputRefs = {};
 
         this.state = {
+            value: "",
             favSport: undefined,
             items: [
                 {
@@ -17,16 +18,8 @@ export default class PrimaryLoginPage extends React.Component {
                     value: 'Roubo',
                 },
                 {
-                    label: 'Furto',
-                    value: 'Furto',
-                },
-                {
-                    label: 'Assedio',
-                    value: 'Assedio',
-                },
-                {
-                    label: 'Tiroteio',
-                    value: 'Assedio',
+                    label: 'Assassinato',
+                    value: 'Assassinato',
                 }
             ],
         };
@@ -47,7 +40,7 @@ export default class PrimaryLoginPage extends React.Component {
             items={this.state.items}
             onValueChange={(value) => {
                 this.setState({
-                    favSport: value,
+                    value: value
                 });
             }}
             onUpArrow={() => {
@@ -58,8 +51,7 @@ export default class PrimaryLoginPage extends React.Component {
             }}
             style={{ ...pickerSelectStyles }}
 
-
-            value={this.state.favSport}
+            value={this.state.value}
             ref={(el) => {
                 this.inputRefs.picker2 = el;
             }}

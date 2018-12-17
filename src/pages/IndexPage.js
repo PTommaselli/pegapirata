@@ -32,7 +32,45 @@ export default class IndexPageClass extends React.Component {
     return;
   }
 
-
+  renderMaker(place){
+    console.log(place);
+    switch (place.tipo_registro) {
+      case 'Roubo':
+        return <MapView.Marker
+        key={place.id_registro}
+        image={require('../../assets/Marker_Roubo.png')}
+        title={place.nome_registro}
+        description={place.desc_registr}
+        coordinate={{
+          latitude: Number(place.latitude),
+          longitude: Number(place.longitude)
+        }}
+        />
+      break;
+      case 'Assassinato':
+        return <MapView.Marker
+        key={place.id_registro}
+        image={require('../../assets/Marker_Assassinato.png')}
+        title={place.nome_registro}
+        description={place.desc_registro}
+        coordinate={{
+          latitude: Number(place.latitude),
+          longitude: Number(place.longitude)
+        }}
+        />
+      break;
+      default:
+        return <MapView.Marker
+        key={place.id_registro}
+        title={place.nome_registro }
+        description={place.desc_registro}
+        coordinate={{
+          latitude: Number(place.latitude),
+          longitude: Number(place.longitude)
+        }}
+        />
+    }
+  }
 
   static navigationOptions = ({ navigation }) => {
     return {
@@ -43,9 +81,9 @@ export default class IndexPageClass extends React.Component {
   };
   render() {
     const { latitude, longitude } = this.state;
-    console.log(this.state.places);
     return (
           <MapView
+              zoomEnabled={true}
               region={{
                 latitude: -22.21664883,
                 longitude: -54.81285095,
@@ -62,18 +100,7 @@ export default class IndexPageClass extends React.Component {
               showsPointsOfInterest={ false }
               showBuildings={ false }
           >
-          { this.state.places.map(place => (
-            <MapView.Marker
-              key={place.id_registro}
-              title={place.tipo_registro}
-              description={place.nome_registro}
-              coordinate={{
-                latitude: Number(place.latitude),
-                longitude: Number(place.longitude)
-              }}
-            />
-          ))}
-
+          { this.state.places.map(this.renderMaker.bind(this)) }
 
           </MapView>
     );
